@@ -5,7 +5,7 @@ import './index.css';
 class Home extends React.Component {
     render(i) {
         return (
-            <div className="home-page"></div>
+            <div className="page-container home-page display-f flex-cc">WELECOME TO MY SITE</div>
         )
     }
 }

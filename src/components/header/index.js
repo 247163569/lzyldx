@@ -1,11 +1,22 @@
 import React from 'react';
 import './index.css';
+// import store from '../../store/store';
+
+import {changeSlideState} from '../../store/action'
 
 class Header extends React.Component {
+    // constructor(props) {
+    //     super(props)
+    // }
+
+    gogogo = () => {
+        changeSlideState(true)
+    }
+
     render(i) {
         return (
             <div className="nav-header display-f flex-between align-center">
-                <div>三</div>
+                <div className="cursor-p select-no" onClick={()=>{this.gogogo()}}>≡</div>
                 <div className="display-f align-center">
                     <div className="user-avatar"></div>
                     <div className="user-name">李朝阳</div>
@@ -34,7 +45,6 @@ class Header extends React.Component {
     componentWillUnmount() {
         console.log('componentWillUnmount')
     }
-
 }
 
 export default Header

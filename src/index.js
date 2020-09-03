@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import Layout from './pages/layout/index';
-import './index.css';
+import './index.less';
 
 const AppDom = (
   <div style={{ height: '100%', width: '100%' }}>
-    <HashRouter>
-      <Layout/>
-    </HashRouter>
+      <HashRouter>
+        <Layout/>
+      </HashRouter>
   </div>
 )
 
