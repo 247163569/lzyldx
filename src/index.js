@@ -4,11 +4,16 @@ import { HashRouter } from 'react-router-dom';
 import Layout from './pages/layout/index';
 import './index.less';
 
+import { Provider } from 'react-redux'
+import { store } from './store/index'
+
 const AppDom = (
   <div style={{ height: '100%', width: '100%' }}>
+    <Provider store={ store }>
       <HashRouter>
-        <Layout/>
+        <Layout />
       </HashRouter>
+    </Provider>
   </div>
 )
 

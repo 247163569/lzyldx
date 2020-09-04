@@ -1,17 +1,12 @@
 import React from 'react';
 import './index.css';
-// import store from '../../store/store';
-
-import {changeSlideState} from '../../store/action'
 
 class Header extends React.Component {
     // constructor(props) {
     //     super(props)
     // }
 
-    gogogo = () => {
-        changeSlideState(true)
-    }
+    gogogo = () => {}
 
     render(i) {
         return (
