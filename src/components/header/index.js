@@ -1,16 +1,18 @@
 import React from 'react';
-import './index.css';
-// import store from '../../store/store';
+import { storeContext } from '../../store/context'; // 引入storeContext
+import { slideChange } from '../../store/action';
 
-import {changeSlideState} from '../../store/action'
+import './index.css';
 
 class Header extends React.Component {
+    static contextType = storeContext; // 加静态属性contextType, 赋值为storeContext
     // constructor(props) {
     //     super(props)
     // }
 
     gogogo = () => {
-        changeSlideState(true)
+        let { store } = this.context;
+        store.dispatch(slideChange());
     }
 
     render(i) {
@@ -23,27 +25,6 @@ class Header extends React.Component {
                 </div>
             </div>
         )
-    }
-    componentWillMount() {
-        console.log('componentWillMount')
-    }
-    componentDidMount() {
-        console.log('componentDidMount')
-    }
-    componentWillReceiveProps() {
-        console.log('componentWillReceiveProps')
-    }
-    shouldComponentUpdate() {
-        console.log('shouldComponentUpdate')
-    }
-    componentWillUpdate() {
-        console.log('componentWillUpdate')
-    }
-    componentDidUpdate() {
-        console.log('componentDidUpdate')
-    }
-    componentWillUnmount() {
-        console.log('componentWillUnmount')
     }
 }
 

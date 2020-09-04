@@ -4,13 +4,21 @@ import Slidebar from '../../components/slidebar/index';
 import Router from'../../router/index'; // 引入路由表
 import './index.css';
 
+import { storeContext } from '../../store/context'; // 引入storeContext
+
 
 class Layout extends React.Component {
+    static contextType = storeContext; // 加静态属性contextType, 赋值为storeContext
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+
     render(i) {
         return (
             <div className="layout-page">
                 <Slidebar />
-                <div className={['display-f', 'flex-col', 'layout-main', 'slide-close'].join(' ')}>
+                <div className={['display-f', 'flex-col', 'layout-main', this.state.slideState?'':'slide-close'].join(' ')}>
                     <Header />
                     <div className="layout-content" style={{ flexGrow: 1 }}>
                         <Router />
@@ -18,6 +26,14 @@ class Layout extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    componentDidMount() {
+        let { store } = this.context; // this.context 获取到store
+        this.setState(store.getState())
+        store.subscribe(() => { // 监听状态的改变
+            this.setState(store.getState())
+        })
     }
 }
 
