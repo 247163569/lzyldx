@@ -1,9 +1,9 @@
-import { initState } from './state'
+import { initState } from './state/index'
 
 export const reducer = (state = initState, action) => {
     switch (action.type) {
         case "SLIDE_CHANGE":
-            state.slideState = !state.slideState
+            state.slide.slideState = !state.slide.slideState
             return state
         default:
             return state;

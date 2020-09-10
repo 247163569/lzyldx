@@ -1,20 +1,20 @@
-export const initState = {
+export default {
     slideState: true,
     menus: [{
-        key: 'home',
+        key: '/home',
         name: '首页',
         link: '/home'
     }, {
-        key: 'user',
+        key: '/user',
         name: '用户管理',
         link: '/user',
         children: [{
-            key: 'userList',
+            key: '/userList',
             name: '用户列表',
             link: '/userList'
         }]
     }, {
-        key: 'mine',
+        key: '/mine',
         name: '个人中心',
         link: '/mine'
     }]

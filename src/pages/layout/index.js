@@ -30,9 +30,9 @@ class Layout extends React.Component {
 
     componentDidMount() {
         let { store } = this.context; // this.context 获取到store
-        this.setState(store.getState())
+        this.setState(store.getState().slide)
         store.subscribe(() => { // 监听状态的改变
-            this.setState(store.getState())
+            this.setState(store.getState().slide)
         })
     }
 }
